@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>چالش‌جو</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0288d1">
+    <link rel="icon" href="icon-192.png" type="image/png">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js');
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>چالش‌جو</h1>
+    </header>
+    <main>
+        <section id="challenge-section">
+            <h2>چالش امروز</h2>
+            <p id="challenge-text">برای شروع روی دکمه زیر کلیک کن!</p>
+            <button onclick="newChallenge()">چالش جدید</button>
+        </section>
+
+        <section id="submit-section">
+            <h2>ارسال چالش جدید</h2>
+            <input type="text" id="title" placeholder="عنوان چالش">
+            <textarea id="description" placeholder="توضیح چالش"></textarea>
+            <select id="category">
+                <option>فکری</option>
+                <option>ورزشی</option>
+                <option>عادت‌سازی</option>
+                <option>خلاقیت</option>
+            </select>
+            <button onclick="submitChallenge()">ارسال</button>
+        </section>
+    </main>
+    <footer>
+        <p>ساخته شده با ❤️ توسط ChatGPT</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
